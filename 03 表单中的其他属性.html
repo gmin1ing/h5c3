@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <form action="" id="myForm">
+            <!-- placeholder：提示占位 -->
+            <!-- autofocus : 自动获取焦点 -->
+            <!-- autocomplete ：自动完成，记录输入的历史记录 前提： 1 必须提交过 2 当前添加 autocomplete 的元素必须有name属性-->
+            用户名 ：<input type="text" name="userName" placeholder="请输入用户名" autofocus autocomplete="on"><br>
+            <!-- required : 必须输入，否则数据不能提交 -->
+            <!-- pattern：正则表单验证 -->
+            手机号 ：<input type="tel" name="tel" required pattern="^(\+86)?1\d{10}$" ><br>
+            <!-- multiple 选则过个文件-->
+            文件上传： <input type="file" name="file[]" multiple><br>
+            <!-- multiple 可以输入过个邮箱 -->
+            邮箱 ：<input type="email" name="email" multiple><br>
+
+            <input type="submit" >
+        </form>
+        <!--这个地址不在form中，因此不能提交-->
+        <!--form 指定表单的id ，当指定表单元素数据提交时，该元素也会提交-->
+        地址：<input type="text" name="address" form="myForm">
+    </body>
+</html>

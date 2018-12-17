@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <script src="jquery-1.12.1.js"></script>
+        <script>
+        
+        </script>
+    </head>
+    <body>
+    <script >
+        (function outer() {
+            inner();
+        })();
+        function inner() {
+            alert(arguments.callee.caller);
+        }
+
+    </script>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+
+    </head>
+    <body>
+        <form action="">
+            <!--专业：<select name="" id="">-->
+                <!--<option value="1">哈哈</option>-->
+                <!--<option value="2">lalal</option>-->
+                <!--<option value="3">卡卡</option>-->
+                <!--<option value="4">124</option>-->
+            <!--</select>-->
+            <!-- 创建一个可以输入的-->
+            专业：<input type="text" list="subjects">
+            <!--datalist 创建选择列表-->
+            <!--firefox不支持-->
+            <datalist id="subjects">
+                <option value="dandan" label="🥚" />
+                <option value="哈哈" label="好好好"></option>
+                <option value="lalal" label="good"></option>
+                <option value="卡卡" label="～～～"></option>
+            </datalist>
+            网址：<input type="url" list="urls">
+            <datalist id="urls">
+                <!-- 如果input输入框的type类型是url，那么value值必须添加http:// -->
+                <option value="http://www.baidu.com"></option>
+                <option value="http://www.jd.com"></option>
+                <option value="http://www.taobao.com"></option>
+            </datalist>
+        </form>
+    </body>
+</html>
