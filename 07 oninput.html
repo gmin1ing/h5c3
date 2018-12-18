@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+    <form action="">
+        用户名：<input type="text" name="userName" id="userName"><br>
+        电话：<input type="tel" id="tel" name="rel" pattern="^1d{10}$"><br>
+        <input type="submit">
+    </form>
+    <script>
+        // <!-- oninput 监听当前运输内容的改变：只要内容改变，就会触发这个事件-->
+        document.getElementById("userName").oninput=function(){
+            console.log("oninput" + this.value);
+        }
+    //    onkeyup:键盘弹起的时候触发：每一个键的弹起都会触发一次
+        document.getElementById("userName").onkeyup=function(){
+            console.log("onkeyup" + this.value);
+        }
+        // oninvalid: 当验证不通过时触发
+        document.getElementById("tel").oninvalid=function(){
+            // console.log('电话规格不符');
+            this.setCustomValidity("电话规格不符");// 设置默认提示信息
+        }
+    </script>
+    </body>
+</html>
