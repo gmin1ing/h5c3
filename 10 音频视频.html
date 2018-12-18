@@ -5,8 +5,27 @@
         <title>Title</title>
     </head>
     <body>
+    <!-- embed 直接插入音视频文件 它本质是调用本机上已经按照的软件，有兼容性 -->
+    <!-- flash插件：安装flash 缺点：1 学习flash 2 苹果设备不支持flash -->
+
     <!-- audio -->
-    <audio src=""></audio>
+    <!-- controls 控制面板 -->
+    <!-- autoplay 自动播放-->
+    <!-- loop 循环-->
+    <audio src="01.mp3" controls autoplay loop></audio>
     <!-- video -->
+    <!-- controls 控制面板 -->
+    <!-- autoplay 自动播放-->
+    <!-- loop 循环-->
+    <!-- width / height-->
+    <!-- poster 视频还未播放时显示的画面，如果没有指定：用户还未点击默认为画面第一帧 -->
+    <!-- 注意：不同浏览器支持的视频格式不同 -->
+    <!-- source 准备多个格式的文件让浏览器选择 -->
+    <!--<video src="text.mp4" poster="01.jpg" controls width="400" ></video>-->
+    <video poster="01.jpg" controls width="400" >
+        <source src="01.mp4" type="video/flv" >
+        <source src="01.mp4" type="video/mp4" >
+        您的浏览器不支持
+    </video>
     </body>
 </html>
