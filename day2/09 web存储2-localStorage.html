@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>sessionStorage</title>
+    </head>
+    <body>
+        localStorage：存储数据到本地，存储到容量是20M左右。
+        1、没有时间限制的数据存储--数据存储在硬盘上，不会随页面和浏览器的关闭而清除的
+        2、不同浏览器不能共享数据，相同浏览器可以共享数据
+        setItem(key,value):存储数据，以键值对到方式存储。
+        getItem(key): 获取数据。
+        removeItem(key): 删除数据。
+        clear():清空所有存储的内容。<br>
+
+        <input type="text" id="userName"><br>
+        <input type="button" value="设置数据" id="setData">
+        <input type="button" value="获取数据" id="getData">
+        <input type="button" value="删除数据" id="removeData">
+        <script >
+            document.querySelector("#setData").onclick = function () {
+                var name=document.querySelector("#userName").value;
+                window.localStorage.setItem("#userName",name);
+            }
+            document.querySelector("#getData").onclick=function () {
+                var userName = window.localStorage.getItem("#userName");
+                // 未设置返回null
+                alert(userName);
+            }
+            document.querySelector("#removeData").onclick=function () {
+                // 删除是key名错误，不会报错，也不会删除数据
+                var userName = window.localStorage.removeItem("#userName");
+            }
+        </script>
+
+    </body>
+</html>

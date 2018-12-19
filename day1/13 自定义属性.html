@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <script>
+        // data-开头
+        // data-后面必须有一个字符
+        //     建议
+        //    小写，不含特殊符号 名称不要纯数字
+        // 取值
+        window.onload=function () {
+            var p=document.querySelector("p");
+            var value = p.dataset["schoolName"];
+            console.log(value);
+        }
+        </script>
+    </head>
+    <body>
+    <p data-school-name="itclass"></p>
+    </body>
+</html>

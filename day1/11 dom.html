@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+
+
+    </head>
+    <body>
+    <ul>
+        <li class="red">js</li>
+        <li class="green">js1</li>
+        <li class="blue">js2</li>
+    </ul>
+    </body>
+<script>
+    window.onload=function () {
+        // var cli = document.getElementsByTagName("li")[0];
+        // console.log(cli);
+
+
+        // 获取第一个元素标签
+        var jsli=document.querySelector(".red");
+        console.log(jsli);
+        var jsliall=document.querySelectorAll("li");
+        console.log(jsliall);
+    }
+</script>
+</html>

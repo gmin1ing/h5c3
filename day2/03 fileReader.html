@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+
+    </head>
+    <body>
+    <form action="">
+        <!--// 即时预览-->
+        文件：<input type="file" name="myFile" id="myFile" onchange="getFileContent();"><br>
+        <input type="submit">
+        <img src="" alt="">
+    </form>
+    <script >
+
+        function getFileContent(){
+           var reader = new FileReader();
+           var file = document.querySelector("#myFile").files;
+           reader.readAsDataURL(file[0]);
+           // 获取数据
+            reader.onload = function () {
+                // console.log(reader.result);
+                document.querySelector("img").src = reader.result;
+            }
+            // onabort:读取文件中断时触发
+            // onerror：读取文件错误时触发
+            // onload:读取文件中成功完成触发
+            // onloadend：读取文件完成时触发
+            // onloadstart:开始读取时触发
+            // onloadgress：读取事件过程中持续出发
+        }
+
+    </script>
+    <script>
+        /**
+         * FileReader : 读取文件内容
+         * 1 readAsText（）：读取文本文件。返回文本字符串，默认UTF-8
+         * 2 readeAsBinaryString（）：读取任意类型文件，返回二进制字符。
+         *  === 以二进制方式读取文件并返会服务器端存储文件使用的
+         * 3 readAsDataURL（）：读取文件并获取一段以data开头的字符串，
+         *  === 这段字符串的本质就是DataURL.DataURL 是一种文件（这个文件一般就是能够嵌入到文档的文件格式），
+         *  DataURL将资源转化为base64编码的字符串形式，并且把这些内容直接存储在URL中，优化网站的加载速度和执行效率
+         * 4 abort（）中断读取
+         */
+    </script>
+    </body>
+</html>

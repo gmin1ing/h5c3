@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            div{
+                width: 200px;
+                height: 200px;
+                border: 1px solid #ccc;
+                float: left;
+                margin: 20px;
+            }
+            p {
+                background-color: yellow;
+            }
+        </style>
+
+    </head>
+    <body>
+    <!-- 在h5 中如果想让元素可以脱拽就给元素添加draggable，图片和超链接不用 -->
+        <div class="div1" id="div1" >
+            <p id="pe" draggable="true">拖拽文字1</p>
+            <p id="pe2" draggable="true">拖拽文字2</p>
+            <p id="pe3" draggable="true">拖拽文字3</p>
+        </div>
+        <div class="div2" id="div2"></div>
+        <div class="div3" id="div3"></div>
+    </body>
+<script>
+    // 学习拖拽主要学习拖拽事件
+    var obj = null;
+    document.ondragstart = function(e) {
+        e.target.style.opacity = 0.5;
+        e.target.parentNode.style.borderWidth = "5px";
+        obj = e.target;
+    }
+    document.ondragend = function(e){
+        e.target.style.opacity = 1;
+        e.target.parentNode.style.borderWidth = "1px";
+
+    }
+    document.ondragover = function (e) {
+        e.preventDefault();
+    }
+    document.ondrop = function (e) {
+        e.target.appendChild(obj);
+    }
+
+
+</script>
+</html>

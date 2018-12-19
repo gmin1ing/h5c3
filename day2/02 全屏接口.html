@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <script>
+        
+        </script>
+    </head>
+    <body>
+    <div>
+         <img src="01.gif" alt="">
+         <input type="button" id="full" value="全屏">
+         <input type="button" id="cancelfull" value="退出全屏">
+         <input type="button" id="isFull" value="是否全屏">
+    </div>
+
+    <script >
+        /**
+         * 全屏操作的主要方法和属性
+         * 1 requestFullScreen():开启全屏，应用于当前元素的
+         *  不同浏览器需要添加不同的前缀
+         *   chrome:webkit
+         *   firefox：moz
+         *   ie：ms
+         *   opera：o
+         * 2 cancelFullScreen():退出全屏:只能使用document，应用于于当前页面的
+         * 3 fullScreenElement():是否全屏:只能使用document，应用于于当前页面的
+         */
+        window.onload=function(){
+            var div = document.querySelector("div");
+            // 开启全屏
+            document.querySelector("#full").onclick=function () {
+                // div.webkitRequestFullScreen();
+                // div.mozRequestFullScreen();
+                // 使用能力测试添加不同浏览器前缀
+                if (div.requestFullscreen){
+                    div.requestFullscreen();
+                } else if (div.webkitRequestFullScreen) {
+                    div.webkitRequestFullScreen();
+                } else if (div.mozRequestFullScreen) {
+                    div.mozRequestFullScreen();
+                } else if(div.msRequestFullScreen) {
+                    div.div.msRequestFullScreen();
+                }
+            }
+            // 关闭全屏
+            document.querySelector("#cancelfull").onclick=function(){
+                if (document.cancelFullScreen){
+                    document.cancelFullScreen();
+                } else if(document.webkitCancelFullScreen) {
+                    document.webkitCancelFullScreen();
+                } else if(document.mozCancelFullScreen) {
+                    document.mozCancelFullScreen();
+                } else if(document.msCancelFuelScreenn) {
+                    document.msCancelFuelScreen();
+                }
+            }
+            // 判断是否全屏
+            document.querySelector("#isFull").onclick=function(){
+                if (document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement)
+                {
+                    alert(true);
+                }else {
+                    alert(false);
+                }
+
+            }
+        }
+    </script>
+    </body>
+</html>

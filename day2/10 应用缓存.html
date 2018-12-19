@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!--manifest="应用缓存清单的路径 建议文件扩展名是appcache，这个文件的本质是文本文件-->
+<html lang="en" manifest="demo.appcache">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            img {
+                height: 100px;
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+    <!--
+    应用程序缓存优势：
+        可配置需要缓存的资源
+        离线浏览 - 用户可在应用离线时使用它们
+        速度 - 已缓存资源加载得更快
+        减少服务器负载 - 浏览器将只从服务器下载更新过或更改过的资源。-->
+    <img src="01.gif" alt="">
+    <img src="01.jpg" alt="">
+    <img src="03.jpg" alt="">
+    </body>
+</html>

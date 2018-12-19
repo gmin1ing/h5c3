@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+
+
+    </head>
+    <body>
+    <ul>
+        <li class="red">js</li>
+        <li class="green">js1</li>
+        <li class="blue">js2</li>
+        <li class="blue">js2</li>
+    </ul>
+    </body>
+<script>
+    window.onload=function () {
+        document.querySelector("#add").onclick=function (){
+            // 一次只能添加一个样式
+            document.querySelector("li").classList.add("red");
+            document.querySelector("li").classList.add("green");
+            // document.querySelector("li").className.add("red green");//覆盖添加样式
+            //---获取元素
+            var result1 = document.querySelector("li").classList.item(0);//第一个
+            var result2 = document.querySelector("li").classList.item(1);//第二个
+        }
+        document.querySelector("#remove").onclick=function (){
+            // 一次只能移除一个样式
+            document.querySelector(".blue").classList.remove("blue");
+        }
+
+        // toggle切换元素样式
+        document.querySelector("#toggle").onclick=function () {
+            document.querySelector(".blue").classList.toggle("yellow");
+        }
+
+        // contains:判断元素是否包含某个样式
+        document.querySelector("#contains").onclick=function (){
+            document.querySelector(".blue").classList.contains("blue");
+        }
+
+    }
+</script>
+</html>
