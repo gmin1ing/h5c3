@@ -117,6 +117,7 @@
             <source src="movie.ogg">
         </video>
         <div class="controls">
+            <!-- 播放 -->
             <a href="javascript:;" class="switch fa fa-play"></a>
             <a href="javascript:;" class="expand fa fa-expand"></a>
             <div class="progress">
@@ -135,13 +136,97 @@
 
     <script src="../jquery-1.12.1.min.js"></script>
     <script >
-        $(
-            function () {
+        $(function () {
+                // 1 获取播放器
                 var video = $("video")[0];
 
+                // 2 播放暂停
+                $(".switch").click(function () {
+                    if (video.pause){
+                        video.play();
+                        // 移除暂停样式，添加播放样式
+                    } else {
+                        // 移除播放样式，添加暂停样式
+                    }
+                    //    设置标签的样式
+                    $(this).toggleClass("fa-play fa-pause");
+                });
 
-            }
-        );
+                // 3 全屏操作
+                $(".expand").click(function () {
+                    if (video.requestFullScreen){
+                        video.requestFullScreen();
+                    } else if (video.webkitRequestFullScreen){
+                        video.webkitRequestFullScreen();
+                    } else if (video.mozRequestFullScreen) {
+                        video.mozRequestFullScreen();
+                    } else if (video.msRequestFullScreen){
+                        video.msRequestFullScreen();
+                    }
+                });
+
+                // 4 播放操作--视频文件可以播放时
+                video.oncanplay=function () {
+                    setTimeout(function () {
+                        // 显示视频
+                        video.style.display = "block";
+                        var total = video.duration;
+                        $(".totalTime").html(getTime(total));
+                        //获取文件总时长,以秒为单位同时获取了小数值
+                        // var total = video.duration;
+                        // var hour = Math.floor(total / 60 / 60);
+                        // hour = hour<10?"0"+hour:hour;
+                        // var minute = Math.floor(total % 3600 / 60);
+                        // minute = minute<10?"0"+minute:minute;
+                        // var second = Math.floor(total % 60);
+                        // second = second<10 ?"0"+second:second;
+                        // console.log(hour + ":" + minute +":" +second);
+                        // $(".totalTime").html(hour + ":" + minute +":" +second);
+                    },2000);
+                }
+
+                // 通过总时长计算时分秒
+
+                function getTime(time){
+                    var total = video.duration;
+                    var hour = Math.floor(time / 60 / 60);
+                    hour = hour<10?"0"+hour:hour;
+                    var minute = Math.floor(time % 3600 / 60);
+                    minute = minute<10?"0"+minute:minute;
+                    var second = Math.floor(time % 60);
+                    second = second<10 ?"0"+second:second;
+                    return hour + ":" + minute +":" +second;
+                }
+                // 5 实现播放过程中
+                // 修改视频currentTime 也会触发该事件
+                video.ontimeupdate = function () {
+                    // 获取当前的播放时间
+                    var current = video.currentTime;
+                    // 计算出时分秒
+                    $(".currentTime").html(getTime(current));
+                    // 设置进度条样式
+                    var percent = current / video.duration * 100;
+                    $(".elapse").css("width",percent + "%");
+                }
+
+                // 6 实现视频跳播
+                // console.log($(".bar").width());
+                $(".bar").click(function (e) {
+                    // 鼠标相对于父元素的偏移
+                    var offset = e.offsetX;
+                    var percent = offset / $(this).width();
+                    // 视频进度值
+                    var current = percent * video.duration;
+                    video.currentTime = current;
+                });
+
+                // 7 播放完毕重置播放器事件
+                video.onended=function () {
+                    video.currentTime = 0;
+                    $(".switch").removeClass("fa-pause").addClass("fa-play");
+                }
+
+            });
     </script>
     </body>
 </html>
