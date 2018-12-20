@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            border {
+                background-color: #ccc;
+            }
+            .andorid {
+                width: 500px;
+                height: 500px;
+                margin: 50px auto;
+                text-align: center;
+                border: 1px solid red;
+            }
+            .head {
+                width: 250px;
+                height: 125px;
+                margin: 10px auto;
+                background-color: green;
+                border-radius: 125px 125px 0 0;
+                position: relative;
+
+            }
+            .head::before,
+            .head::after {
+                content: "";
+                width: 20px;
+                height: 20px;
+                border-radius: 10px;
+                display: block;
+                background-color: #fff;
+                position: absolute;
+                top: 65px;
+            }
+            .head::before {
+                left: 70px;
+            }
+            .head::after {
+                right: 70px;
+            }
+            .body {
+                width: 250px;
+                height: 220px;
+                background-color: green;
+                margin: 0 auto;
+                border-radius: 0 0 20px 20px;
+                position: relative;
+            }
+            .body::before,
+            .body::after{
+                content: "";
+                width: 30px;
+                height: 180px;
+                display: block;
+                background-color: green;
+                position: absolute;
+                top: 10px;
+                border-radius: 10px;
+            }
+            .body::before {
+                left: -40px;
+            }
+            .body::after{
+                right: -40px;
+            }
+            .foot {
+                width: 250px;
+                height: 100px;
+                /*background-color: whitesmoke;*/
+                margin: 0 auto;
+                position: relative;
+            }
+            .foot::before,
+            .foot::after{
+                content: "";
+                display: block;
+                width: 30px;
+                height: 100px;
+                background-color: green;
+                position: absolute;
+                top: 0;
+                border-radius: 0 0 10px 10px;
+            }
+            .foot::before{
+                left: 50px;
+            }
+            .foot::after{
+                right: 50px;
+            }
+        </style>
+    </head>
+    <body>
+    <div class="andorid">
+        <div class="head"></div>
+        <div class="body"></div>
+        <div class="foot"></div>
+    </div>
+    </body>
+</html>
