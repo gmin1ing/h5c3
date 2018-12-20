@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            li {
+                list-style: none;
+            }
+            .menu {
+                width: 300px;
+                height: auto;
+                margin: 0 auto;
+            }
+            .item {
+                width: 100%;
+                height: auto;
+            }
+            .item > h3 {
+                height: 40px;
+                line-height: 40px;
+                background-color: green;
+                color: orange;
+                border-bottom: 2px solid #ccc;
+                padding-left: 10px;
+            }
+            .item > .itemBox {
+                width: 100%;
+                height: 0;
+                overflow: hidden;
+                transition: height 1s;
+
+            }
+            .item:hover > .itemBox{
+                height: 100px;
+            }
+            .item > .itemBox > ul {
+                list-style: none;
+                background-color: yellow;
+                padding: 10px;
+            }
+        </style>
+    </head>
+    <body>
+    <div class="menu">
+        <div class="item">
+            <h3>国内新闻</h3>
+            <div class="itemBox">
+                 <ul>
+                    <li>可定的打开附近开了</li>
+                    <li>的发Kia 洛杉矶地方</li>
+                    <li>到附近开了姐弟恋事件</li>
+                    <li>但是看见了上帝的呢</li>
+                </ul>
+            </div>
+        </div>
+        <div class="item">
+            <h3>国外新闻</h3>
+            <div class="itemBox">
+                 <ul>
+                    <li>可定的打开附近开了</li>
+                    <li>的发Kia 洛杉矶地方</li>
+                    <li>到附近开了姐弟恋事件</li>
+                    <li>但是看见了上帝的呢</li>
+                </ul>
+            </div>
+        </div>
+        <div class="item">
+            <h3>省内新闻</h3>
+            <div class="itemBox">
+                 <ul>
+                    <li>可定的打开附近开了</li>
+                    <li>的发Kia 洛杉矶地方</li>
+                    <li>到附近开了姐弟恋事件</li>
+                    <li>但是看见了上帝的呢</li>
+                </ul>
+            </div>
+        </div>
+        <div class="item">
+            <h3>省外新闻</h3>
+            <div class="itemBox">
+                 <ul>
+                    <li>可定的打开附近开了</li>
+                    <li>的发Kia 洛杉矶地方</li>
+                    <li>到附近开了姐弟恋事件</li>
+                    <li>但是看见了上帝的呢</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    </body>
+</html>
