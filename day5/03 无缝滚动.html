@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            div {
+                width: 700px;
+                height: 100px;
+                margin: 10px auto;
+                overflow: hidden;
+            }
+            div > ul {
+                list-style: none;
+                animation-name: rollT;
+                animation-duration: 3s;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+                width: 1400px;
+            }
+            ul > li {
+                float: left;
+                width: 100px;
+                height: 100px
+            }
+            li > img {
+                width: 100px;
+                height: 100px;
+            }
+            div:hover>ul {
+                cursor: pointer;
+                animation-play-state: paused;
+            }
+            @keyframes rollT {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(-700px);
+                }
+            }
+        </style>
+
+    </head>
+    <body>
+    <div>
+        <ul>
+            <li><img src="01.jpg" alt=""></li>
+            <li><img src="02.jpg" alt=""></li>
+            <li><img src="03.jpg" alt=""></li>
+            <li><img src="04.jpg" alt=""></li>
+            <li><img src="05.jpg" alt=""></li>
+            <li><img src="06.jpg" alt=""></li>
+            <li><img src="07.jpg" alt=""></li>
+
+             <li><img src="01.jpg" alt=""></li>
+            <li><img src="02.jpg" alt=""></li>
+            <li><img src="03.jpg" alt=""></li>
+            <li><img src="04.jpg" alt=""></li>
+            <li><img src="05.jpg" alt=""></li>
+            <li><img src="06.jpg" alt=""></li>
+            <li><img src="07.jpg" alt=""></li>
+        </ul>
+    </div>
+
+    </body>
+</html>

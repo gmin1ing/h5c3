@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            .container {
+
+            }
+            header {
+                width: 100%;
+                display: flex;
+            }
+            header >a {
+                flex: 1;
+                display: flex;
+            }
+            header >a >img {
+                flex: 1;
+            }
+
+            main {
+                width: 100%;
+                padding: 0 10px;
+                box-sizing: border-box;
+            }
+            main > .item {
+                width: 100%;
+                height: 100px;
+                background-color: #29c3c8;
+                border-radius: 10px;
+                margin-top: 10px;
+                display: flex;
+            }
+            main > .item:nth-of-type(2) {
+                background-color: #c382c8;
+            }
+            main > .item:nth-of-type(3) {
+                background-color: #46a0c8;
+            }
+            main > .item:nth-of-type(4) {
+                background-color: #c88625;
+            }
+            main > .item > .left{
+                flex: 1;
+            }
+            main > .item > .right {
+                flex: 2;
+                display: flex;
+                flex-flow: wrap;
+            }
+            main > .item > .right >a {
+                width: 50%;
+                display: block;
+                box-sizing: border-box;
+                line-height: 50px;
+                text-align: center;
+                text-decoration: none;
+                border-bottom: 1px solid #fff;
+                border-left: 1px solid #fff;
+            }
+            main > .item > .right >a:nth-last-of-type(-n+2){
+                border-bottom: 0;
+            }
+            main > .extar {
+                width: 100%;
+                display: flex;
+                margin-top: 10px;
+            }
+            main > .extar >a {
+                flex: 1;
+            }
+            main > .extar >a >img {
+                width: 100%;
+                /*height: 100px;*/
+            }
+            footer {
+                width: 100%;
+                font-size: 12px;
+            }
+            footer>nav{
+                width: 100%;
+                display: flex;
+                border-top: 1px solid #ccc;
+                border-bottom: 1px solid #ccc;
+            }
+            footer>nav >a {
+                flex: 1;
+                text-decoration: none;
+                line-height: 30px;
+                text-align: center;
+                color: #ccc;
+            }
+            footer > .link {
+                text-align: center;
+                line-height: 25px;
+            }
+            footer>.copyRight {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+    <div class="container">
+        <header>
+            <a href="">
+                <img src="img/header.jpg" alt="">
+            </a>
+        </header>
+        <main>
+            <section class="item">
+                <div class="left"></div>
+                <div class="right">
+                    <a href="">海外酒店</a>
+                    <a href="">海外酒店</a>
+                    <a href="">海外酒店</a>
+                    <a href="">海外酒店</a>
+                </div>
+            </section>
+            <section class="item">
+                <div class="left"></div>
+                <div class="right">
+                    <a href="">海外酒店</a>
+                    <a href="">海外酒店</a>
+                    <a href="">海外酒店</a>
+                    <a href="">海外酒店</a>
+                </div>
+            </section>
+            <section class="item">
+                <div class="left"></div>
+                <div class="right">
+                    <a href="">海外酒店</a>
+                    <a href="">海外酒店</a>
+                    <a href="">海外酒店</a>
+                    <a href="">海外酒店</a>
+                </div>
+            </section>
+            <section class="item">
+                <div class="left"></div>
+                <div class="right">
+                    <a href="">海外酒店</a>
+                    <a href="">海外酒店</a>
+                    <a href="">海外酒店</a>
+                    <a href="">海外酒店</a>
+                </div>
+            </section>
+            <section class="extar">
+                <a href=""><img src="img/01.jpg" alt=""></a>
+                <a href=""><img src="img/01.gif" alt=""></a>
+            </section>
+        </main>
+        <footer>
+            <nav>
+                <a href="">电话预定</a>
+                <a href="">下载客户发</a>
+                <a href="">我的订单</a>
+            </nav>
+            <p class="link">
+                <a href="">网站地图</a>
+                <a href="">ENGLISH</a>
+                <a href="">电脑版</a>
+            </p>
+            <p class="copyRight">&copy;2018携程旅行</p>
+        </footer>
+    </div>
+    </body>
+</html>
