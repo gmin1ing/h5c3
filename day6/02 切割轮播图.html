@@ -13,6 +13,7 @@
                 width: 560px;
                 height: 300px;
                 margin: 100px auto;
+                position: relative;
             }
             ul{
                 width: 100%;
@@ -28,6 +29,8 @@
                 float: left;
                 position: relative;
                 transform-style: preserve-3d;
+                /*添加过度效果*/
+                transition: transform 0.5s;
             }
             ul >li >span {
                 width: 100%;
@@ -49,12 +52,43 @@
             ul>li>span:nth-of-type(3){
                 background: url("img/autumn.jpeg");
                 background-size: 560px 300px;
-                transform: translateZ(-150px) rotateX(-180deg);
+                transform: translateZ(-150px) rotateX(180deg);
             }
             ul>li>span:nth-of-type(4){
                 background:url("img/winter.jpeg");
                 background-size: 560px 300px;
                 transform: translateY(150px) rotateX(-90deg);
+            }
+            ul>li:nth-of-type(2)>span {
+                background-position: -100% 0;
+            }
+            ul>li:nth-of-type(3)>span {
+                background-position: -200% 0;
+            }
+            ul>li:nth-of-type(4)>span {
+                background-position: -300% 0;
+            }
+            ul>li:nth-of-type(5)>span {
+                background-position: -400% 0;
+            }
+            .pre,.next {
+                width: 60px;
+                height: 60px;
+                text-align: center;
+                line-height: 60px;
+                position: absolute;
+                top: 50%;
+                text-decoration: none;
+                font-size: 40px;
+                transform: translate(0,-50%);
+                background-color: rgba(0,0,0,.5);
+                color: #fff;
+            }
+            .pre{
+                left: 0;
+            }
+            .next{
+                right: 0;
             }
         </style>
     </head>
@@ -97,6 +131,49 @@
                  <span></span>
              </li>
          </ul>
+         <a href="javascript:;" class="pre">&lt;</a>
+         <a href="javascript:;" class="next">&gt;</a>
      </div>
+     <script src="jquery-1.12.1.min.js"></script>
+    <script>
+        $(function () {
+            var index = 0;
+            //本次单击会有响应处理
+            var flag =true;
+            $(".next").on("click",function () {
+                if (flag==true){
+                    flag=false;
+                    index--;
+                    $("li").each(function (key,value) {
+                        $(this).css({
+                            "transform":"rotateX("+(index*90)+"deg)",
+                            "transition-delay":(key*0.2)+"s"
+                        });
+                    });
+                    setTimeout(function () {
+                        flag=true;
+                    },1000)
+                }
+
+            });
+
+            $(".pre").on("click",function () {
+                if (flag==true){
+                    flag=false;
+                    index++;
+                    $("li").each(function (key,value) {
+                        $(this).css({
+                            "transform":"rotateX("+(index*90)+"deg)",
+                            "transition-delay":(key*0.2)+"s"
+                        });
+                    });
+                    setTimeout(function () {
+                        flag=true;
+                    },1000)
+                }
+
+            });
+        });
+    </script>
     </body>
 </html>
